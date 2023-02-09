@@ -1,0 +1,179 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Challenge Documentation",
+        "description": "Challenge OpenApi description",
+        "contact": {
+            "email": "deniwerik@outlook.com"
+        },
+        "version": "1.0.0",
+        "x-logo": {
+            "url": "https://via.placeholder.com/190x90.png?text=L5-Swagger"
+        }
+    },
+    "paths": {
+        "/api/aparelhos": {
+            "get": {
+                "tags": [
+                    "Aparelhos"
+                ],
+                "operationId": "fb8d37b7583c80cfd804a900b574cf48",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Paginação",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Aparelhos listagem"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Aparelhos"
+                ],
+                "operationId": "3f12a709f205c409a07c758c8833e6de",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nome": {
+                                        "type": "string"
+                                    },
+                                    "IMEI": {
+                                        "type": "string"
+                                    },
+                                    "marca": {
+                                        "type": "string"
+                                    },
+                                    "modelo": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nome": "nome teste",
+                                    "IMEI": "IMEI teste ÚNICO",
+                                    "marca": "marca teste",
+                                    "modelo": "modelo teste"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Aparelho cadastro"
+                    }
+                }
+            }
+        },
+        "/api/aparelhos/{id}": {
+            "get": {
+                "tags": [
+                    "Aparelhos"
+                ],
+                "operationId": "5220c18b99809053dd49977d5d93af07",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Aparelho ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Aparelho"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Aparelhos"
+                ],
+                "operationId": "0311ab956002ed64686d328c2f1e483f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Aparelho ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nome": {
+                                        "type": "string"
+                                    },
+                                    "IMEI": {
+                                        "type": "string"
+                                    },
+                                    "marca": {
+                                        "type": "string"
+                                    },
+                                    "modelo": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nome": "nome teste",
+                                    "IMEI": "IMEI teste ÚNICO",
+                                    "marca": "marca teste",
+                                    "modelo": "modelo teste"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "202": {
+                        "description": "Aparelho atualizar"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Aparelhos"
+                ],
+                "operationId": "164281853fc4bdb34c6861cacffcd358",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Aparelho ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Aparelho deletar"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
